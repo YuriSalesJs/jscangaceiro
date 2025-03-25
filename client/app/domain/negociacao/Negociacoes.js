@@ -14,4 +14,8 @@ class Negociacoes {
         .reduce((total, negocicao) =>
             total + negocicao.volume, 0)
     }
+
+    esvazia(){
+        this._negociacoes = []
+    }
 }

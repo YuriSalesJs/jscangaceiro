@@ -1,6 +1,6 @@
 class NegociacaoController {
     constructor(){
-        let $ = document.querySelector.bind(document)
+        const $ = document.querySelector.bind(document)
 
         this._inputData = $('#data')
         this._inputQuantidade = $('#quantidade')
@@ -35,5 +35,12 @@ class NegociacaoController {
             parseInt(this._inputQuantidade.value),
             parseFloat(this._inputValor.value)            
         )
+    }
+
+    apaga(){
+        this._negociacoes.esvazia()
+        this._negociacoesView.update(this._negociacoes)
+        this._mensagem.texto = 'Negociações apagadas com sucesso'
+        this._mensagemView.update(this._mensagem)
     }
 }
